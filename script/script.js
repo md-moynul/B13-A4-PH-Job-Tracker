@@ -14,6 +14,10 @@ const totalHeading = document.getElementById('total-heading');
 const totalSide = document.getElementById("total-side");
 const interviewTotal = document.getElementById('interview-total');
 const rejectedTotal = document.getElementById('rejected-total');
+const interviewTotalSideFull = document.getElementById('interview-total-side-full');
+const interviewTotalSide = document.getElementById('interview-total-side');
+const rejectedTotalSideFull = document.getElementById('rejected-total-side-full');
+const rejectedTotalSide = document.getElementById('rejected-total-side');
 
 // section selectors
 const allSection = document.getElementById('card-container');
@@ -36,14 +40,19 @@ function toggle(id) {
     addHidden(allSection);
     addHidden(interviewSection);
     addHidden(rejectedSection);
+    addHidden(interviewTotalSideFull);
+    addHidden(rejectedTotalSideFull);
+
     if (id == 'all-filter-btn') {
         removeHidden(allSection);
 
     } else if (id == 'interview-filter-btn') {
         removeHidden(interviewSection);
+        removeHidden(interviewTotalSideFull);
 
     } else if (id == 'rejected-filter-btn') {
         removeHidden(rejectedSection);
+        removeHidden(rejectedTotalSideFull);
 
     }
 
@@ -56,8 +65,10 @@ function calculateCountTotal() {
     totalSide.innerText = totalCount;
     let interviewTotalCount = interviewArray.length;
     interviewTotal.innerText = interviewTotalCount;
+    interviewTotalSide.innerText = interviewTotalCount;
     let rejectedTotalCount = rejectedArray.length;
     rejectedTotal.innerText = rejectedTotalCount;
+    rejectedTotalSide.innerText = rejectedTotalCount;
 }
 calculateCountTotal()
 mainContainer.addEventListener('click', function (event) {
@@ -136,9 +147,8 @@ mainContainer.addEventListener('click', function (event) {
     } else if (event.target.classList.contains('btn-delete')) {
         const target = event.target;
         const targetParent = target.parentNode.parentNode.parentNode;
-        console.log(targetParent);
-        console.log(cardContainer.removeChild(targetParent))
-             calculateCountTotal();
+        cardContainer.removeChild(targetParent)
+        calculateCountTotal();
     }
 
 })
