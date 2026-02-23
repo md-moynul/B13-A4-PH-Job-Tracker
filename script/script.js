@@ -156,7 +156,7 @@ function renderInterview() {
                     </div>
                     <div>
                         <p
-                            class="btn border-none px-4 py-2 flex items-center justify-center text-red-500 border-red-500 rounded hover:bg-red-500 hover:text-base-100">
+                            class="btn-delete btn border-none px-4 py-2 flex items-center justify-center text-red-500 border-red-500 rounded hover:bg-red-500 hover:text-base-100">
                             <i class="fa-solid fa-trash-can "></i>
                         </p>
 
@@ -200,7 +200,7 @@ function renderRejected() {
                     </div>
                     <div>
                         <p
-                            class="btn border-none px-4 py-2 flex items-center justify-center text-red-500 border-red-500 rounded hover:bg-red-500 hover:text-base-100">
+                            class="btn-delete btn border-none px-4 py-2 flex items-center justify-center text-red-500 border-red-500 rounded hover:bg-red-500 hover:text-base-100">
                             <i class="fa-solid fa-trash-can "></i>
                         </p>
 
