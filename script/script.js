@@ -155,6 +155,16 @@ mainContainer.addEventListener('click', function (event) {
 
 function renderInterview() {
     interviewSection.innerHTML = '';
+    if (interviewArray.length === 0) {
+        interviewSection.innerHTML = `
+            <div class="flex flex-col items-center justify-center py-16 bg-base-100 rounded-2xl">
+                <img src="assets/jobs.png" alt="No jobs" class="w-24 h-24 mb-4">
+                <h3 class="text-2xl font-bold text-gray-700">No jobs available</h3>
+                <p class="text-gray-500">Check back soon for new job opportunities</p>
+            </div>
+        `;
+        return;
+    }
     interviewArray.forEach(element => {
         let div = document.createElement('div');
         div.className = "card p-6 space-y-5 bg-base-100 rounded-2xl  hover:shadow-2xl transition duration-300 text-left"
@@ -198,7 +208,7 @@ function renderInterview() {
 function renderRejected() {
 
     rejectedSection.innerHTML = ''
-
+    
     rejectedArray.forEach(element => {
         let div = document.createElement('div');
         div.className = "card p-6 space-y-5 bg-base-100 rounded-2xl  hover:shadow-2xl transition duration-300 text-left"
