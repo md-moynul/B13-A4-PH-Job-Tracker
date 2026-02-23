@@ -133,6 +133,12 @@ mainContainer.addEventListener('click', function (event) {
         renderInterview()
         calculateCountTotal();
 
+    } else if (event.target.classList.contains('btn-delete')) {
+        const target = event.target;
+        const targetParent = target.parentNode.parentNode.parentNode;
+        console.log(targetParent);
+        console.log(cardContainer.removeChild(targetParent))
+             calculateCountTotal();
     }
 
 })
@@ -182,7 +188,7 @@ function renderInterview() {
 function renderRejected() {
 
     rejectedSection.innerHTML = ''
-    
+
     rejectedArray.forEach(element => {
         let div = document.createElement('div');
         div.className = "card p-6 space-y-5 bg-base-100 rounded-2xl  hover:shadow-2xl transition duration-300 text-left"
