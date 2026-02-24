@@ -16,13 +16,10 @@ Ans: To create an element in DOM, first, where should I place this element? I wi
 	example
 		** Adding an element to a specific "div" in the body is shown - which has <div id="parent"></div> in the html.
 		const parent = document.getElementById("parent");
-
 		** create new Element
 		const newElement = document.createElement("p");
-
 		** content add new element
 		newElement.innerText = "it's new Element , create by dom "
-
 		** add to Dom
 		parent.appendChild(newElement); 
 3. What is Event Bubbling? And how does it work?
