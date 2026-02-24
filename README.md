@@ -25,13 +25,13 @@ Ans: To create an element in DOM, first, where should I place this element? I wi
 
 		** add to Dom
 		parent.appendChild(newElement); 
-What is Event Bubbling? And how does it work?
+3. What is Event Bubbling? And how does it work?
 Ans : Event Bubbling means that the event starts rising from the bottom to the top parent, it is called Event Bubbling.
 
-3. What is Event Delegation in JavaScript? Why is it useful?
+4. What is Event Delegation in JavaScript? Why is it useful?
 Ans : Event Delegation means placing an event listener on the parent element, not on the child. It takes up less memory, works on dynamic elements, and keeps the code clean.
 
-4. What is the difference between preventDefault() and stopPropagation() methods?
+5. What is the difference between preventDefault() and stopPropagation() methods?
 Ans : Below is the difference between preventDefault() and stopPropagation() methods
 
 	** preventDefault() --> This disables the browser's default behavior. 
