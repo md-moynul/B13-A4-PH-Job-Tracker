@@ -146,11 +146,23 @@ mainContainer.addEventListener('click', function (event) {
 
     } else if (event.target.classList.contains('btn-delete')) {
         const target = event.target;
-        const targetParent = target.parentNode.parentNode.parentNode;
-        cardContainer.removeChild(targetParent)
-        calculateCountTotal();
-    }
+        const targetParentE = target.parentNode.parentNode.parentNode;
+        console.log(targetParentE)
+        targetParentE.parentNode.removeChild(targetParentE);
 
+        const targetParent = target.parentNode.parentNode;
+        const companyName = targetParent.querySelector('.company-name').innerText;
+
+        const cardInfo = {
+            companyName,
+        }
+        interviewArray = interviewArray.filter(item => item.companyName != cardInfo.companyName);
+        rejectedArray = rejectedArray.filter(item => item.companyName != cardInfo.companyName);
+        renderRejected()
+        renderInterview()
+        calculateCountTotal();
+
+    }
 })
 
 function renderInterview() {
